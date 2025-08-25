@@ -1,0 +1,84 @@
+/* רקע עם שפמים בזיגזג */
+.booking-page {
+  min-height: 100vh;
+  background-color: #fff;
+  position: relative;
+
+  /* שפמים ברקע */
+  background-image: url("/images/mustache.png");
+  background-repeat: repeat;
+  background-size: 120px 80px;
+  background-position: 0 0, 60px 40px; /* זיגזג */
+}
+
+.booking-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.9); /* שכבת בהירות לשמירה על קריאות */
+  z-index: 0;
+}
+
+.popup-container {
+  min-height: 80vh;
+  position: relative;
+  z-index: 1; /* לוודא שהכרטיס מעל השכבה */
+}
+
+.popup-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+}
+
+/* כפתור סגירה */
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.popup-close:hover {
+  color: #d9534f;
+}
+
+/* טקסטים */
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #333;
+  background: #fff;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+/* כפתור */
+.btn-dark {
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+}

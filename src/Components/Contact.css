@@ -1,0 +1,93 @@
+/* Popup wrapper */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Popup box */
+.contact-container {
+  position: relative;
+  background: hsl(0, 0%, 100%);
+  padding: 45px; /* יותר ריווח פנימי */
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;   /* 👈 הגדלתי את הרוחב המקסימלי */
+  min-height: 400px;  /* 👈 הגדרתי גובה מינימלי */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+  color: #333;
+}
+
+
+/* Title */
+.contact-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #000;
+}
+
+/* Inputs */
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.form-control:focus {
+  border-color: #000;
+  box-shadow: none;
+}
+
+/* Submit button */
+.btn-submit {
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: #444;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #000;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}

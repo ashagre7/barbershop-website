@@ -1,0 +1,143 @@
+/* רקע כללי */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #000);
+  font-family: 'Heebo', sans-serif;
+  color: #fff;
+  padding: 20px;
+}
+
+/* קונטיינר ראשי */
+.auth-container {
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* אנימציית הופעה */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* כותרת */
+.auth-title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+}
+
+/* טאבים למעלה (התחברות / הרשמה) */
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #333;
+}
+
+.auth-tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 600;
+  color: #bbb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.auth-tab:hover {
+  color: #fff;
+}
+
+.auth-tab.active {
+  color: #d4af37;
+  border-bottom: 3px solid #d4af37;
+}
+
+/* טופס */
+.auth-form .form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #ccc;
+}
+
+.auth-form .form-control {
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.auth-form .form-control:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+  outline: none;
+}
+
+/* כפתור */
+.btn-auth {
+  background: #d4af37;
+  color: #000;
+  font-weight: 700;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  margin-top: 10px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+  background: #b5942f;
+  transform: scale(1.05);
+}
+
+/* הודעות */
+.auth-message {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.auth-message.success {
+  color: #4caf50;
+}
+
+.auth-message.error {
+  color: #e74c3c;
+}
+
+/* קישור שכחתי סיסמה */
+.auth-extra {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.auth-extra a {
+  color: #d4af37;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.auth-extra a:hover {
+  color: #fff;
+}
