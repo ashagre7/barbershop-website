@@ -1,93 +1,81 @@
-/* Popup wrapper */
+/* רקע כהה שקוף */
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
+  font-family: "Noto Sans Hebrew", sans-serif; /* ✅ טיפוגרפיה */
 }
 
+/* חלון הפופאפ */
 .popup-content {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Popup box */
-.contact-container {
+  background: #252525; /* ✅ כהה לפי ה־var שלך --e-global-color-d5e7a77 */
+  color: #F6E5BA;      /* ✅ צבע טקסט בהיר – זהב רך */
+  padding: 40px 35px;
+  border-radius: 15px;
+  width: 450px;
+  max-width: 95%;
   position: relative;
-  background: hsl(0, 0%, 100%);
-  padding: 45px; /* יותר ריווח פנימי */
-  border-radius: 16px;
-  width: 100%;
-  max-width: 600px;   /* 👈 הגדלתי את הרוחב המקסימלי */
-  min-height: 400px;  /* 👈 הגדרתי גובה מינימלי */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
-  color: #333;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+  border: 1px solid #E4E4E4; /* ✅ גבול אפור בהיר */
 }
 
-
-/* Title */
-.contact-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #000;
-}
-
-/* Inputs */
-.form-label {
+/* כותרת */
+.popup-content h2 {
+  font-size: 26px; /* לפי --e-global-typography-f4258cd */
   font-weight: 600;
-  color: #333;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
 }
 
-.form-control {
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+/* שדות טופס */
+.popup-content form .form-control {
+  background: #FDF8EC; /* ✅ רקע בהיר */
+  border-radius: 6px;
   padding: 10px;
   margin-bottom: 15px;
-  color: #000;
+  border: 1px solid rgba(32,7,7,0.8);
+  color: #333;
+  font-size: 1rem;
 }
 
-.form-control:focus {
-  border-color: #000;
-  box-shadow: none;
-}
-
-/* Submit button */
+/* כפתור שליחה */
 .btn-submit {
-  background: #000;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px;
-  width: 100%;
+  background: #f6bace; /* ✅ זהב בהיר */
+  color: #000;
   border: none;
+  font-weight: 600;
+  padding: 12px;
+  width: 100%;
   border-radius: 8px;
-  transition: 0.3s;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn-submit:hover {
-  background: #444;
+  background: #fac7d8; /* גוון כהה יותר */
+  transform: scale(1.03);
 }
 
-/* Close button */
-.close-btn {
+/* כפתור סגירה */
+.popup-close {
   position: absolute;
   top: 12px;
-  right: 12px;
-  background: transparent;
+  right: 15px;
   border: none;
-  font-size: 1.5rem;
+  background: transparent;
+  font-size: 22px;
+  color: #F6E5BA;
   cursor: pointer;
-  color: #000;
+  transition: 0.3s;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+.popup-close:hover {
+  color: #fff;
 }

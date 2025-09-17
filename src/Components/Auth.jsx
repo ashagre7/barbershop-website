@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
-import Navbar from "./Navbar"; // 👈 לשמור את ה־Navbar שלך
 
 const Auth = () => {
-  const [activeTab, setActiveTab] = useState("login"); // login או signup
+  const [activeTab, setActiveTab] = useState("login"); 
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -14,7 +13,6 @@ const Auth = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // שליחה לשרת
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -22,7 +20,6 @@ const Auth = () => {
 
     try {
       if (activeTab === "login") {
-        // התחברות
         const res = await fetch("http://localhost:5000/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -33,16 +30,11 @@ const Auth = () => {
         if (res.ok) {
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", JSON.stringify(data.user));
-          if (data.user.isAdmin) {
-            navigate("/admin");
-          } else {
-            navigate("/");
-          }
+          navigate(data.user.isAdmin ? "/admin" : "/");
         } else {
           setError(data.message || "פרטי התחברות שגויים");
         }
       } else {
-        // הרשמה
         const res = await fetch("http://localhost:5000/api/auth/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -68,7 +60,6 @@ const Auth = () => {
 
   return (
     <div className="auth-page">
-      <Navbar />
       <div className="auth-container">
         <h2 className="auth-title">
           {activeTab === "login" ? "התחברות" : "הרשמה"}
@@ -135,11 +126,9 @@ const Auth = () => {
           </button>
         </form>
 
-        {/* הודעות */}
         {message && <p className="auth-message success">{message}</p>}
         {error && <p className="auth-message error">{error}</p>}
 
-        {/* שכחתי סיסמה */}
         {activeTab === "login" && (
           <div className="auth-extra">
             <a href="/forgot-password">שכחתי סיסמה?</a>

@@ -58,14 +58,12 @@ const Booking = () => {
 
   return (
     <div className="booking-page">
-      {/* ❌ Navbar הוסר מהעמוד הזה */}
-
-      <div className="popup-container d-flex justify-content-center align-items-center">
+      <div className="popup-container">
         <div className="popup-card">
           <button className="popup-close" onClick={() => navigate("/")}>
             ✕
           </button>
-          <h2 className="text-center mb-4">קביעת תור</h2>
+          <h2 className="popup-title">קביעת תור</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">שם מלא</label>
@@ -109,31 +107,32 @@ const Booking = () => {
               </select>
             </div>
 
-            <div className="mb-3">
-              <label className="form-label">תאריך</label>
-              <input
-                type="date"
-                name="date"
-                value={form.date}
-                onChange={handleChange}
-                className="form-control"
-                required
-              />
+            <div className="d-flex gap-3">
+              <div className="flex-fill mb-3">
+                <label className="form-label">תאריך</label>
+                <input
+                  type="date"
+                  name="date"
+                  value={form.date}
+                  onChange={handleChange}
+                  className="form-control"
+                  required
+                />
+              </div>
+              <div className="flex-fill mb-3">
+                <label className="form-label">שעה</label>
+                <input
+                  type="time"
+                  name="time"
+                  value={form.time}
+                  onChange={handleChange}
+                  className="form-control"
+                  required
+                />
+              </div>
             </div>
 
-            <div className="mb-4">
-              <label className="form-label">שעה</label>
-              <input
-                type="time"
-                name="time"
-                value={form.time}
-                onChange={handleChange}
-                className="form-control"
-                required
-              />
-            </div>
-
-            <button type="submit" className="btn btn-dark w-100 fw-bold">
+            <button type="submit" className="btn-submit">
               הזמן עכשיו
             </button>
           </form>

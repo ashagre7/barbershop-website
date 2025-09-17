@@ -1,60 +1,75 @@
 .services-section {
-  padding: 60px 20px;
-  background: #1a1a1a; /* שחור-אפור כהה */
-  color: #141313;
+  background: #252525;
+  padding: 80px 20px;
+  color: #F6E5BA;
+  font-family: "Noto Sans Hebrew", sans-serif;
+}
+
+.services-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .services-title {
-  font-weight: 700;
-  margin-bottom: 40px;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
   color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* טבלה */
-.services-table {
-  background: #2a2a2a; /* אפור כהה */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px auto;
+  max-width: 600px;
 }
 
-.services-table td {
-  padding: 16px;
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #666;
+  padding: 12px 0;
   font-size: 1.1rem;
-  border-bottom: 1px solid #444;
-  color: #242121;
-}
-
-.services-table tr:last-child td {
-  border-bottom: none;
 }
 
 .service-name {
-  text-align: right;
-  font-weight: 600;
+  font-weight: 500;
   color: #fff;
 }
 
 .service-price {
-  text-align: center;
-  color: #bbb; /* אפור בהיר למחירים */
   font-weight: 600;
+  color: #F6E5BA;
 }
 
-/* כפתור */
+/* נקודות בין שם למחיר */
+.dots {
+  flex: 1;
+  border-bottom: 1px dotted #666;
+  margin: 0 10px;
+}
+
+/* כפתור בתחתית */
+.services-action-bottom {
+  margin-top: 40px;
+}
+
 .btn-service {
-  background: #333;
-  color: #fff;
-  border-radius: 6px;
-  padding: 6px 14px;
-  font-weight: 600;
+  background: #F6E5BA;
+  color: #000;
+  font-weight: 700;
+  padding: 15px 40px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .btn-service:hover {
-  background: #555;
-  color: #fff;
+  background: #d5c28d;
+  transform: scale(1.05);
 }
-

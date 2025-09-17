@@ -1,0 +1,98 @@
+.admin-page {
+  min-height: 100vh;
+  background: #f5f5f5; /* ✅ בהיר ונקי */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  font-family: "Heebo", sans-serif;
+  color: #333;
+}
+
+/* קונטיינר */
+.admin-container {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1100px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+}
+
+/* כותרת */
+.admin-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+/* טבלה */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-table th {
+  background: #f1f1f1;
+  color: #333;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.admin-table td {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.admin-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* כפתור אישור - ירוק עדין */
+.btn-approve {
+  background: #a8d5ba; /* ירוק פסטלי */
+  color: #1e4620;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: background 0.3s;
+}
+
+.btn-approve:hover {
+  background: #91c7a7;
+}
+
+/* כפתור מחיקה - אדום עדין */
+.btn-delete {
+  background: #f6b7b7; /* אדום בהיר */
+  color: #5a1a1a;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-delete:hover {
+  background: #ee9e9e;
+}
+

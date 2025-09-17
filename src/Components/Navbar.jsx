@@ -1,28 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png"; // ✅ ייבוא הלוגו מתוך src/assets
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./Navbar.css";
 
 const Navbar = ({ onContactClick }) => {
   return (
-    <nav className="navbar-floating">
+    <nav className="navbar-block">
       <div className="navbar-container">
 
         {/* צד שמאל */}
-        <div className="navbar-links-left">
+        <div className="navbar-links navbar-links-left">
           <Link to="/" className="nav-link">ראשי</Link>
           <a href="#about" className="nav-link">עלינו</a>
         </div>
 
         {/* לוגו באמצע */}
         <div className="navbar-logo-custom">
-          <div className="logo-mustache">︶</div>
-          <h1 className="logo-title">BARBER SHOP</h1>
-          <div className="logo-banner">FRESH CUT</div>
+          <img 
+            src={logo}
+            alt="Fresh Cut Logo"
+            className="navbar-logo-img"
+          />
         </div>
 
         {/* צד ימין */}
-        <div className="navbar-links-right">
+        <div className="navbar-links navbar-links-right">
           <a
             href="#!"
             className="nav-link"
