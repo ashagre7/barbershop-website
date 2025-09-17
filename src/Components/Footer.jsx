@@ -11,7 +11,7 @@ const Footer = ({ onContactClick }) => {
           <div className="col-md-4 mb-3">
             <h5 className="fw-bold">יצירת קשר</h5>
             <p className="mb-1">📍 פתח תקווה, ישראל</p>
-            <p className="mb-1">📞 058-6560425</p>
+            <p className="mb-1">📞 03-1511562</p>
             <p className="mb-0">✉️ info@freshcut.co.il</p>
           </div>
 
