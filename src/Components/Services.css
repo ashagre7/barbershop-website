@@ -1,11 +1,29 @@
 .services-section {
-  background: #252525;
+  position: relative;
+  background: url("../assets/services-bg.jpg.jpg") no-repeat center center/cover; /* ✅ תמונה חדשה */
+  background-attachment: fixed; /* ✅ אפקט פרלקס */
   padding: 80px 20px;
   color: #F6E5BA;
   font-family: "Noto Sans Hebrew", sans-serif;
+  overflow: hidden;
 }
 
+/* ✅ שכבת כהות מעל התמונה */
+.services-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* ✅ התוכן מעל השכבה */
 .services-container {
+  position: relative;
+  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;

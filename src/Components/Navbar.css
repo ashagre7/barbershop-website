@@ -1,7 +1,7 @@
 /* ===== Navbar Block ===== */
 .navbar-block {
   width: 100%;
-  height: 160px;
+  height: 180px;
   background: transparent;
   display: flex;
   justify-content: center;
@@ -9,81 +9,126 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
 }
 
-/* עוטף פנימי */
+/* ===== עוטף פנימי ===== */
 .navbar-container {
   width: 100%;
-  max-width: 1000px; /* ✅ מצמצם את השטח כדי לקרב את הלינקים ללוגו */
+  max-width: 950px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* ===== קישורים ===== */
-.navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* ✅ ריווח קטן יותר בין קישורים */
-}
-
-.nav-link {
-  color: #fff !important;
-  font-weight: 700;
-  font-size: 1.4rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #bbb !important;
-}
-
-/* ===== לוגו ===== */
+/* ===== לוגו באמצע ===== */
 .navbar-logo-custom {
   flex-shrink: 0;
   text-align: center;
 }
 
 .navbar-logo-img {
-  height: 140px;
+  height: 160px;
   width: auto;
   display: block;
   object-fit: contain;
+  cursor: pointer;
+}
+
+/* ===== קישורים בדסקטופ ===== */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #d4af37 !important;
+}
+
+/* ===== עוטף המבורגר ===== */
+.hamburger-wrapper {
+  position: relative; /* ✅ כדי שהתפריט יוצא מתחת לאייקון */
+  display: inline-block;
+}
+
+/* ===== אייקון המבורגר ===== */
+.navbar-hamburger {
+  display: none; /* יוצג רק במובייל */
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+  z-index: 300;
+}
+
+/* ===== Dropdown במובייל ===== */
+.mobile-dropdown {
+  position: absolute;
+  top: 100%;          /* ✅ מתחת לאייקון */
+  left: 0;            /* ✅ מיושר לפי האייקון, לא לפי כל המסך */
+  background: rgba(0,0,0,0.9);
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  display: flex;
+  min-width: 140px;   /* ✅ רוחב מינימלי */
+  max-width: 70vw;    /* ✅ לא חורג במסכים קטנים */
+  padding: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.mobile-dropdown.open {
+  max-height: 400px;
+  opacity: 1;
+  padding: 8px 0;
+}
+
+.mobile-dropdown .nav-link {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  color: #fff !important;
+  box-sizing: border-box;
+}
+
+.mobile-dropdown .nav-link:hover {
+  background: rgba(212,175,55,0.8);
+  color: #000 !important;
 }
 
 /* ===== רספונסיביות ===== */
 @media (max-width: 992px) {
-  .navbar-block {
-    height: 120px;
+  .navbar-links-left,
+  .navbar-links-right .desktop-only {
+    display: none; /* ✅ מסתיר קישורים רגילים במובייל */
   }
 
-  .nav-link {
-    font-size: 1.2rem;
+  .navbar-hamburger {
+    display: block; /* ✅ מציג המבורגר */
   }
 
   .navbar-logo-img {
-    height: 100px;
+    height: 120px;
   }
 }
 
 @media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar-links {
-    gap: 15px;
-  }
-
-  .nav-link {
-    font-size: 1rem;
-  }
-
   .navbar-logo-img {
-    height: 80px;
+    height: 90px;
   }
 }
