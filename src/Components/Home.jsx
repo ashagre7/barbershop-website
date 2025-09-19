@@ -25,8 +25,8 @@ const Home = ({ onContactClick }) => {
         <div className="video-overlay"></div>
 
         <div className="hero-content">
-          <h1 className="text-white mt-3">ברוכים הבאים</h1>
-          <h2 className="display-4 fw-bold text-white">לפרייש קאט </h2>
+          <h1 className="text-white mt-3">  ברוכים הבאים  </h1>
+          <h1 className="display-4 fw-bold text-white">לפרייש קאט </h1>
           <button
             onClick={handleBookingClick}
             className="btn-white px-4 py-2 mt-4 shadow-sm"
